@@ -9,14 +9,15 @@ Rather than looking at the raw code files here, you can explore the fully render
 
 ## Featured Projects & Studies
 
-1. **The True Cost of Your Closet (Final Project)** * An interactive, data-driven web application evaluating the environmental footprint of fast fashion consumption habits among college demographics. Built using HTML5, CSS3, JavaScript, and the Web Audio API.
-2. **Decision Points**
+1. **The True Cost of Your Closet**
+   * An interactive, data-driven web application evaluating the environmental footprint of fast fashion consumption habits among college demographics. Built using HTML5, CSS3, JavaScript, and the Web Audio API.
+3. **Decision Points**
    * A non-linear, branching narrative engine exploring choice architecture, narrative nodes, and variable state-tracking utilizing the Twine framework.
-3. **Generative Form & Chromatic Randomness**
+4. **Generative Form & Chromatic Randomness**
    * An autonomous visual installation built in Processing (Java) focusing on coordinate layer saturation, alpha transparency vectors, and iterative canvas painting.
-4. **Kinetic Orbitals: Rotational Matrix Transformation**
+5. **Kinetic Orbitals: Rotational Matrix Transformation**
    * A mathematical design study exploring angular acceleration curves, progressive geometric translations, and vector coordinate tracking.
-5. **Time-Based Design & Typographical Layouts**
+6. **Time-Based Design & Typographical Layouts**
    * A conditional rendering script mapping vector processing loops against fixed frame-rate triggers to synthesize abstract aesthetics with strict editorial typography.
 
 ---
