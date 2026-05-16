@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Coding & Interactive Arts Portfolio</title>
+    <style>
+        body {
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #24292e;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #1f2328;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2.3rem; font-weight: 700; letter-spacing: -0.02em; }
+        header p { margin: 10px 0 0; color: #8c959f; font-size: 1.1rem; }
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .project-card {
+            background: #fff;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+        }
+        .project-card h2 {
+            color: #0969da;
+            margin-top: 0;
+            font-size: 1.6rem;
+            border-bottom: 1px solid #d0d7de;
+            padding-bottom: 8px;
+        }
+        .project-meta {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #57606a;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 15px;
+        }
+        .project-links {
+            margin: 15px 0;
+        }
+        .project-links a {
+            display: inline-block;
+            background: #24292e;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .project-links a:hover { background: #57606a; }
+        .project-img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        h3 { color: #24292e; font-size: 1.15rem; margin-top: 25px; margin-bottom: 8px; }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #57606a;
+            font-size: 0.9rem;
+            border-top: 1px solid #d0d7de;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
 
+<header>
+    <h1>Interactive Arts & Creative Coding</h1>
+    <p>A curated portfolio of algorithmic visual design, front-end logic, and narrative architecture.</p>
+</header>
+
+<div class="container">
+
+    <div class="project-card">
+        <h2>1. The True Cost of Your Closet</h2>
+        <div class="project-meta">Interactive Web Application (HTML / CSS / JavaScript)</div>
+        <p><strong>Project Description:</strong> An interactive frontend application designed to engage users with the environmental data surrounding ultra-fast fashion consumption, tracking individual behavior patterns through an intuitive web interface.</p>
+        
+        <div class="project-links">
+            <a href="quiz.html" target="_blank">Launch Live Project ➔</a>
+        </div>
+        
+        <img src="final-project.png" alt="The True Cost of Your Closet Interface" class="project-img">
+        
+        <h3>How I Solved the Challenge:</h3>
+        <p>I engineered a single-page state management architecture using customized JavaScript logic to smoothly swap viewports without forcing a browser refresh. I enhanced user immersion by building an automated, math-driven visual progress bar and synthesizing programmatic click interactions using the browser's native Web Audio API framework.</p>
+    </div>
+
+    <div class="project-card">
+        <h2>2. Decision Points</h2>
+        <div class="project-meta">Narrative Engine & Choice Architecture (HTML / Twine)</div>
+        <p><strong>Project Description:</strong> An interactive branching narrative experience built to explore state variables, conditional logic thresholds, and complex user-driven plot paths.</p>
+        
+        <div class="project-links">
+            <a href="decision-points.html" target="_blank">Launch Live Project ➔</a>
+        </div>
+        
+        <img src="twine.png" alt="Decision Points Architecture Mapping" class="project-img">
+        
+        <h3>How I Solved the Challenge:</h3>
+        <p>The core challenge was structurally mapping nonlinear story nodes to prevent broken logic loops. I resolved this by establishing a rigorous structural blueprint inside the Harlowe narrative architecture, binding progression variables cleanly to ensure text states shift dynamically based on previous selections.</p>
+    </div>
+
+    <div class="project-card">
+        <h2>3. Generative Form & Chromatic Randomness</h2>
+        <div class="project-meta">Algorithmic Vector Art (Processing / Java)</div>
+        <p><strong>Project Description:</strong> An autonomous visual simulation exploring canvas saturation, transparency layers, and randomized shape generation vectors.</p>
+        
+        <img src="processing1.png" alt="Generative Form Sample Output" class="project-img">
+        
+        <h3>How I Solved the Challenge:</h3>
+        <p>I programmed a live canvas system that utilizes asynchronous alpha values and calculation divisors to layer vector objects iteratively. To balance performance and high fidelity, I restricted the math constraints to loop gracefully while designing custom event handlers to stop the iteration loop and capture high-resolution frame data on demand.</p>
+    </div>
+
+    <div class="project-card">
+        <h2>4. Kinetic Orbitals: Rotational Matrix Transformation</h2>
+        <div class="project-meta">Mathematical Design Study (Processing / Java)</div>
+        <p><strong>Project Description:</strong> An experimental math-driven artwork focused on linear drift, angular acceleration curves, and permanent background tracking trails.</p>
+        
+        <img src="processing2.png" alt="Kinetic Orbitals Graphical Output" class="project-img">
+        
+        <h3>How I Solved the Challenge:</h3>
+        <p>I transitioned away from unpredictable random paths to follow intentional rotational translation frameworks. By chaining dynamic coordinate transformations directly onto an escalating acceleration scale, the program renders smooth, winding coordinate webs that update sequentially based on user input parameters.</p>
+    </div>
+
+    <div class="project-card">
+        <h2>5. Time-Based Design & Typographical Layouts</h2>
+        <div class="project-meta">Milestone Conditional Logic (Processing / Java)</div>
+        <p><strong>Project Description:</strong> A computational script built to pair automated vector manipulation loops with fixed typographical alignment layers at specific frame landmarks.</p>
+        
+        <img src="processing3.png" alt="Time-Based Design Graphic Sample" class="project-img">
+        
+        <h3>How I Solved the Challenge:</h3>
+        <p>The objective was to overlay clean editorial layouts perfectly on top of unguided background variations. I managed this by designing a runtime monitoring block that monitors frame processing limits. Once the application hits its target rendering counts, it freezes processing changes and introduces static text frames cleanly across the artwork layout.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Interactive Art Portfolio. Developed for Web Architecture & Interactive Design.</p>
+</footer>
+
+</body>
+</html>
