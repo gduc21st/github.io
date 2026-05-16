@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The True Cost of Your Closet</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --card-color: #ffffff;
+            --accent-color: #2e7d32;
+            --text-color: #333333;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            letter-spacing: -0.01em;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: var(--card-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h1, h2 {
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            display: none;
+        }
+        
+        .progress-bar {
+            width: 0%;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .quiz-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .quiz-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .option-btn {
+            display: block;
+            width: 100%;
+            background: transparent;
+            color: var(--text-color);
+            border: 1px solid #e0e0e0;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: left;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        }
+
+        .option-btn:hover {
+            border-color: var(--accent-color);
+            background: rgba(46, 125, 50, 0.05);
+        }
+
+        .option-btn.selected {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #1b5e20;
+        }
+
+        #results {
+            text-align: center;
+        }
+
+        .score-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin: 20px 0;
+        }
+
+        .source-footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+    </div>
+
+    <div id="start-screen" class="quiz-section active">
+        <h1>The True Cost of Your Closet</h1>
+        <p class="subtitle">An Interactive Fast Fashion Impact Calculator</p>
+        <p>Our obsession with cheap, trendy clothing is breaking the planet. Take this quick 3-question quiz to see how your shopping habits impact the environment.</p>
+        <button class="btn" onclick="startQuiz()">Start the Quiz</button>
+    </div>
+
+    <div id="q1" class="quiz-section">
+        <p class="question">1. How many new clothing items do you typically buy each month?</p>
+        <ul class="options-list">
+            <li><button class="option-btn" onclick="selectOption('q1', 10, event)">0 to 2 items</button></li>
+            <li><button class="option-btn" onclick="selectOption('q1', 20, event)">3 to 5 items</button></li>
+            <li><button class="option-btn" onclick="selectOption('q1', 30, event)">6 or more items</button></li>
+        </ul>
+        <button class="btn" onclick="nextQuestion('q1', 'q2')">Next Question</button>
+    </div>
+
+    <div id="q2" class="quiz-section">
+        <p class="question">2. What do you usually do with clothes you no longer want to wear?</p>
+        <ul class="options-list">
+            <li><button class="option-btn" onclick="selectOption('q2', 10, event)">Donate them, sell them, or textile recycle</button></li>
+            <li><button class="option-btn" onclick="selectOption('q2', 20, event)">Let them sit in the back of my closet indefinitely</button></li>
+            <li><button class="option-btn" onclick="selectOption('q2', 30, event)">Throw them away in the regular trash bin</button></li>
+        </ul>
+        <button class="btn" onclick="nextQuestion('q2', 'q3')">Next Question</button>
+    </div>
+
+    <div id="q3" class="quiz-section">
+        <p class="question">3. How often do you check tags to avoid synthetic fabrics like polyester or nylon?</p>
+        <ul class="options-list">
+            <li><button class="option-btn" onclick="selectOption('q3', 10, event)">Always / Most of the time</button></li>
+            <li><button class="option-btn" onclick="selectOption('q3', 20, event)">Rarely</button></li>
+            <li><button class="option-btn" onclick="selectOption('q3', 30, event)">Never — I just buy what looks good</button></li>
+        </ul>
+        <button class="btn" onclick="showResults()">Calculate My Footprint</button>
+    </div>
+
+    <div id="results" class="quiz-section">
+        <h2>Your Wardrobe Impact Score</h2>
+        <div id="score" class="score-display">0</div>
+        <p id="feedback-text"></p>
+        <button class="btn" onclick="restartQuiz()">Retake Quiz</button>
+    </div>
+
+    <div class="source-footer">
+        Data sources: US Environmental Protection Agency (EPA) & McKinsey Sustainability Reports.
+    </div>
+</div>
+
+<script>
+    let currentScore = 0;
+    let selections = { q1: 0, q2: 0, q3: 0 };
+
+    function startQuiz() {
+        switchSection('start-screen', 'q1');
+        updateProgress(1);
+    }
+
+    function selectOption(questionId, points, e) {
+        selections[questionId] = points;
+        playClickSound();
+        
+        const buttons = document.querySelectorAll(`#${questionId} .option-btn`);
+        buttons.forEach(btn => btn.classList.remove('selected'));
+        
+        e.target.classList.add('selected');
+    }
+
+    function nextQuestion(currentId, nextId) {
+        if (selections[currentId] === 0) {
+            alert("Please select an option before moving on!");
+            return;
+        }
+        switchSection(currentId, nextId);
+        
+        if (nextId === 'q2') updateProgress(2);
+        if (nextId === 'q3') updateProgress(3);
+    }
+
+    function showResults() {
+        if (selections['q3'] === 0) {
+            alert("Please select an option before moving on!");
+            return;
+        }
+        
+        currentScore = selections.q1 + selections.q2 + selections.q3;
+        switchSection('q3', 'results');
+        updateProgress(0);
+        
+        const scoreElement = document.getElementById('score');
+        const feedbackElement = document.getElementById('feedback-text');
+        
+        scoreElement.innerText = currentScore + " pts";
+        
+        if (currentScore <= 40) {
+            feedbackElement.innerHTML = "<strong>Eco-Conscious Wardrobe!</strong> You are doing a great job keeping your clothing footprint low. Consider hosting clothing swaps with classmates to keep the momentum going!";
+        } else if (currentScore <= 70) {
+            feedbackElement.innerHTML = "<strong>Moderate Footprint.</strong> You enjoy fashion but throwaway culture is creeping in. Try swapping one fast-fashion purchase a month for a thrifted alternative.";
+        } else {
+            feedbackElement.innerHTML = "<strong>High Environmental Impact.</strong> Your habits heavily contribute to textile waste. Try a 'low-buy' challenge next month and pledge to keep your discarded clothes out of landfills.";
+        }
+    }
+
+    function restartQuiz() {
+        selections = { q1: 0, q2: 0, q3: 0 };
+        const allButtons = document.querySelectorAll('.option-btn');
+        allButtons.forEach(btn => btn.classList.remove('selected'));
+        switchSection('results', 'start-screen');
+        updateProgress(0);
+    }
+
+    function switchSection(hideId, showId) {
+        const hideEl = document.getElementById(hideId);
+        const showEl = document.getElementById(showId);
+        
+        hideEl.classList.remove('active');
+        setTimeout(() => {
+            showEl.classList.add('active');
+        }, 50);
+    }
+
+    function updateProgress(currentStep) {
+        const totalSteps = 3;
+        const progressBar = document.getElementById('progress-bar');
+        const progressContainer = document.querySelector('.progress-container');
+        
+        if (currentStep > 0 && currentStep <= totalSteps) {
+            progressContainer.style.display = 'block';
+            const percentage = (currentStep / totalSteps) * 100;
+            progressBar.style.width = percentage + '%';
+        } else {
+            progressContainer.style.display = 'none';
+        }
+    }
+
+    function playClickSound() {
+        try {
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(400, audioCtx.currentTime); 
+            gainNode.gain.setValueAtTime(0.04, audioCtx.currentTime); 
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            oscillator.start();
+            oscillator.stop(audioCtx.currentTime + 0.08);
+        } catch (e) {
+            console.log("Audio not supported or blocked by browser user gesture policies.");
+        }
+    }
+</script>
+
+</body>
+</html>
