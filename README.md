@@ -2,13 +2,12 @@
 
 Welcome to my repository. This project serves as a curated showcase of algorithmic art, computational design, and front-end interactive systems developed throughout the semester.
 
-## 🚀 Live Portfolio Website
- rather than looking at the raw code files here, you can explore the fully rendered, interactive portfolio and play the live projects directly in your browser:
-👉 **[Click Here to View My Live Portfolio](https://YOURUSERNAME.github.io)**
+## Live Portfolio Website
+Rather than looking at the raw code files here, you can explore the fully rendered, **[interactive portfolio](https://YOURUSERNAME.github.io)** and play the live projects directly in your browser.
 
 ---
 
-## 🛠️ Featured Projects & Studies
+## Featured Projects & Studies
 
 1. **The True Cost of Your Closet (Final Project)** * An interactive, data-driven web application evaluating the environmental footprint of fast fashion consumption habits among college demographics. Built using HTML5, CSS3, JavaScript, and the Web Audio API.
 2. **Decision Points**
@@ -22,5 +21,5 @@ Welcome to my repository. This project serves as a curated showcase of algorithm
 
 ---
 
-## 🎨 About Me
+## About Me
 I am a creative practitioner focusing on the intersection of visual arts, emerging interactive digital formats, and programmatic design systems. This portfolio represents an investigation into how logic and code can be leveraged to create meaningful societal narratives and compelling visual environments.
